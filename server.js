@@ -49,18 +49,9 @@ app.get('/tasks', (req, res) => {
         }
     });
 });
+  
  
- 
- 
- 
- 
-//Dexplays
- 
- 
- 
- 
- 
- 
+ //The post commands code
  
  
 app.post('/tasks', (req, res) => {
