@@ -9,14 +9,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
  
 const port = process.env.PORT;  // Use the correct environment variable name
-// app.use(cors({origin: 'http://localhost:5173'}));
+ app.use(cors({origin: 'http://localhost:5173'}));
  
 const db = mysql.createConnection({
     host: 'thresholds-test.mysql.database.azure.com',
     user: process.env.PF, // Replace with your MySQL username
     port: 3306, // Replace with the port you need - may be different from mine
     password: process.env.PASSWORD, // Replace with your MySQL password
-    database: 'jvalladares_tasks', // Replace with your database name
+    database: process.env.DATABASE, // Replace with your database name
 });
  
 db.connect((err) => {
@@ -24,7 +24,7 @@ db.connect((err) => {
         console.error('Failed to connect to the database please check your code:', err);
         return;
     }
-    console.log('Yassssss we innitt');
+    console.log('You just got connected to the database, welcome to shemar info');
 });
  
 app.get('/', (req, res) => {
@@ -49,9 +49,18 @@ app.get('/tasks', (req, res) => {
         }
     });
 });
-  
  
- //The post commands code
+ 
+ 
+ 
+ 
+//Dexplays
+ 
+ 
+ 
+ 
+ 
+ 
  
  
 app.post('/tasks', (req, res) => {
@@ -143,6 +152,5 @@ app.delete('/tasks/:id', (req, res) => {
  
  
 app.listen(port, () => {
-    console.log('deff working now!');
+    console.log('Express working homie');
 });
- 
