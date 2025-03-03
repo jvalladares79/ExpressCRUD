@@ -45,7 +45,7 @@ function App() {
       )
     );
  
-    // DexPlays
+
     const response = await fetch(`http://localhost:3000/tasks/${id}`, {
       method: 'PUT',
       headers: {
@@ -68,8 +68,8 @@ function App() {
   return (<>
    
     <div className="bg-blue-200 text-l border-4 border-green-500 p-4">
-      <h1>To-Do List</h1>
-      <div className=''>
+      <h1>Get to work</h1>
+      <div className='Table'>
         <input
           type="text"
           value={newTaskTitle}
@@ -82,7 +82,7 @@ function App() {
           onChange={(e) => setNewTaskDescription(e.target.value)}
           placeholder="Task Description"
         />
-        <button onClick={addTask}>Add Task</button>
+        <button onClick={addTask}>Add a Task</button>
       </div>
       <ul>
         {tasks.map((task) => (
